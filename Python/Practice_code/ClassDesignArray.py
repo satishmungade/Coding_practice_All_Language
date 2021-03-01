@@ -47,9 +47,31 @@ class ArrayOperation:
 		if No == self.Arr[i]:
 			return True
 		elif i == self.iSize :     
-			return False				
+			return False
+	
+	def PerfectDisplay(self):
+		iSum=0
+		for i in range(self.iSize):
+			for j in range(1,int(self.Arr[i]/2)+1):
+				if self.Arr[i] % j ==0:
+					iSum=iSum + j
+				if iSum == self.Arr[i]:
+					print(self.Arr[i],end=' ')
+			iSum=0		
 
+	def PrimeDisplay(self):
+		Flag=False
+		for i in range(self.iSize):
+			for j in range(2,int(self.Arr[i]/2)+1):
+				if self.Arr[i] % j ==0:
+					Flag = True
+					break
+			if Flag == False:
+				print(self.Arr[i],end=' ')
+			Flag=False	
 
+	def __del__(self):
+		print("\n inside Destructor")
 				
 def main():
 	iNo=int(input("Enter A Size for Array : "))
@@ -68,7 +90,14 @@ def main():
 	if iRet == True :
 		print("\n\tElement is Aviable :")
 	else :
-		print(" \n\tElement is Not Aviable :")	
+		print(" \n\tElement is Not Aviable :")
+
+	print("\n\t Perfect Number Are :")
+	obj.PerfectDisplay()
+	print("\n\t Prime Number Are :")
+	obj.PrimeDisplay()	
+
+	del obj
 if __name__=="__main__":
 	main()			
 	
