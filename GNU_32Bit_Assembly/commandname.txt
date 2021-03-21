@@ -1,0 +1,9 @@
+//linker command in 32bit
+
+as helloword.s -o helloword.o
+# ld helloword.o -lc -dynamic-linker /lib/ld-linux.so.2 -emain exe
+
+cd change directory
+ls list of file
+mkdir make a new directory
+

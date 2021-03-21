@@ -1,0 +1,12 @@
+1. : its labal
+2. .word start line its Assmbler Directive
+3. All Assembly Function and all every thing is internal Linkage
+4. if want any function globl than write .globl that function linkage is external
+5. if want its function than you write .type main,@function
+6. same like variable also .type iNo, @variable
+7.  if use register than start with %esp symboll
+8. if use constant value than  start with %12
+9. leal (load Effective address)
+10. l Long(4)bytes bcoz 32bit pointer size is 4
+11. b byte(1)bytes
+12. word(2) bytes
