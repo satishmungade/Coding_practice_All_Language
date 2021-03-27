@@ -10,3 +10,16 @@
 10. l Long(4)bytes bcoz 32bit pointer size is 4
 11. b byte(1)bytes
 12. word(2) bytes
+13 .All  instruction completed than one enter press (other wise warning give you) 
+################-----Data type Assember actual not data type________####
+1)   .ASCII   1(byte)
+2)   .byte    1(byte) single charactor
+3)   .string  terminated with \0
+4)   .ASCIZ   same string
+5)   .short   2(bytes)
+6)   .long    4(bytes)
+7)   .int     4(bytes)
+8)   .float   4(bytes)
+9)   .double  8(bytes)
+10)  .quad  8(bytes)
+11)  .octa  16(bytes)
