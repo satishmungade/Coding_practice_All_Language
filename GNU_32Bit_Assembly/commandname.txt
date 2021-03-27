@@ -6,4 +6,6 @@ as helloword.s -o helloword.o
 cd change directory
 ls list of file
 mkdir make a new directory
+subl filename.s //open for sublinm code editer
+
 
