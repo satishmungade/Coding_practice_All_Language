@@ -1,4 +1,4 @@
-#intilize global variable int g_iNo=20;
+ #intilize global variable int g_iNo=20;
 .section .rodata
 	msg_main_print1:
 	.string "\n Global iNo is :%d"
