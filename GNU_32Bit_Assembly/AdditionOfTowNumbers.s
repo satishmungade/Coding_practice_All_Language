@@ -80,5 +80,5 @@ addition :
         movl %eax, -4(%ebp)             #iAns mathe value takli addition function madhelya 
 
         movl %ebp , %esp                # stackframe pop keli manhje bp madhali value sp mathali takli.
-        pop %ebp                        #bp la tyachya junya jagevar nehun theval.
+        popl %ebp                        #bp la tyachya junya jagevar nehun theval.
         ret                             #function madhun return kel.
