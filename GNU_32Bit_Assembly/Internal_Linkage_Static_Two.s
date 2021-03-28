@@ -23,6 +23,8 @@
 		pushl $msg_fun_print
 		call printf
 		addl $8,%esp
-		pop %ebp
+		
+		movl %ebp ,%esp   #prolog
+		popl %ebp
 		ret
 		
