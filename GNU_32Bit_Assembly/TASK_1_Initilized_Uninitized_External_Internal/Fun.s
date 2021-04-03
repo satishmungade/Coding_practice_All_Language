@@ -55,7 +55,7 @@
 		ret
 
 .section .text
-.type fun2 ,@function	#static function ahe internal scop theval ahe
+.type fun2 ,@function	#static function ahe internal scope theval ahe
 	fun2:
 	
 		pushl %ebp
