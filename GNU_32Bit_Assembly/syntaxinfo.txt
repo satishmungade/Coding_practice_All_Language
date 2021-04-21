@@ -10,7 +10,9 @@
 10. l Long(4)bytes bcoz 32bit pointer size is 4
 11. b byte(1)bytes
 12. word(2) bytes
-13 .All  instruction completed than one enter press (other wise warning give you) 
+13 .All  instruction completed than one enter press (other wise warning give you)
+14. .equ labal,value ex: .equ MAX , 10
+15. compaire sadhi cnpl it will be all result give you to comparistion
 ################-----Data type Assember actual not data type________####
 1)   .ASCII   1(byte)
 2)   .byte    1(byte) single charactor
@@ -23,4 +25,4 @@
 9)   .double  8(bytes)
 10)  .quad  8(bytes)
 11)  .octa  16(bytes)
-.equ labal,value ex: .equ MAX , 10
+
