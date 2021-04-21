@@ -23,3 +23,4 @@
 9)   .double  8(bytes)
 10)  .quad  8(bytes)
 11)  .octa  16(bytes)
+.equ labal,value ex: .equ MAX , 10
