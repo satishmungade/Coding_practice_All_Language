@@ -13,6 +13,27 @@
 13 .All  instruction completed than one enter press (other wise warning give you)
 14. .equ labal,value ex: .equ MAX , 10
 15. compaire sadhi cnpl it will be all result give you to comparistion
+
+1 ch use
+  Address asel tr %ebx
+  Value ghyaychi asel tr %eax
+____
+2 cha use karaycha asel
+  Addres or value %eax , %edx
+___
+3 cha use karaycha asel tr
+    Address or value 
+    %eax    
+    %edx
+    %ecx
+___
+4 cha use
+   Address or vaLue 
+   %eax
+   %edx
+   %ecx
+   %ebx
+   
 ################-----Data type Assember actual not data type________####
 1)   .ASCII   1(byte)
 2)   .byte    1(byte) single charactor
