@@ -29,11 +29,10 @@
 	addl $8,%esp
 
 	movl $0,-8(%ebp)
-
+	movl -8(%ebp),%eax
 
 Do_Body :
-
-	movl -8(%ebp),%eax
+	
 	pushl %eax
 	pushl $msg_main_print_result
 	call printf	
