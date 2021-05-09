@@ -33,7 +33,40 @@ ___
    %edx
    %ecx
    %ebx
-   
+
+----Array------------
+   Scenario 1 :
+arr1(blank, %eax,4)
+
+Assuming arr1 as global array , Value of iCounter in %eax and type of arr is int.
+
+Scenario 2:
+Blank (%ebx,%eax,4)
+Assuming that address in Pointer is in %ecx , type of pointee of pointer is int, Value of iCounter in %eax.
+
+Scenario 3. Same as 2
+
+Scenario 4.
+-208(%ebp, %ebx, 4) 
+Array Local ahe ethe nav nhi
+-------------------
+--------structure--------struct Demo
+{
+	char chChar;
+	int iNo;
+	float fNo;
+  double dNo;
+
+};
+
+local object 
+  ebp -20
+  -20(%ebp),chchar
+  -16(%ebp),iNo
+  -12(%ebp),shiNo
+  -8(%ebp),dNo
+-------------
+
 ################-----Data type Assember actual not data type________####
 1)   .ASCII   1(byte)
 2)   .byte    1(byte) single charactor
@@ -46,4 +79,4 @@ ___
 9)   .double  8(bytes)
 10)  .quad  8(bytes)
 11)  .octa  16(bytes)
-
+12)  .zero 3 pading time use 
