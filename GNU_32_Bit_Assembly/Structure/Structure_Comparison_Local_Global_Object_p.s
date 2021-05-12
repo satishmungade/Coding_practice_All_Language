@@ -124,12 +124,12 @@
 		jne		Lebal_Not_Equal
 
 		movl 	-8(%ebp),%edx
-		movl 	4(%ebx),%eax		#object pasun 4la 2nd ahe 
+		movl 	4(%ebx),%eax		# object pasun 4la 2nd ahe 
 		cmpl	%edx,%eax
 		jne		Lebal_Not_Equal
 
 		movl 	-4(%ebp),%edx
-		movl 	8(%ebx),%eax		#object pasun 8 la 3rd ahe 
+		movl 	8(%ebx),%eax		# object pasun 8 la 3rd ahe 
 		cmpl	%edx,%eax
 		jne		Lebal_Not_Equal
 
