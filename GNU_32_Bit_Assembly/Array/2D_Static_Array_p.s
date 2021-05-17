@@ -11,11 +11,12 @@
 	msg_main_input_element_scan:
 	.string "%d"
 
-	msg_main_your_Element:
-	.string "\n Entered element are :"
+	msg_main_your_element:
+	.string "\n Entered element are :\n"
 
 	msg_main_output_element_display:
 	.string "[%d][%d] value is:\t%d\n"
+
 
 .equ	MAX,50
 
@@ -25,14 +26,18 @@
 	main:
 		pushl	%ebp
 		movl	%esp,%ebp
-		subl	$10016,%esp
+		subl	$10016,%esp 	#50 * 50 *4 and 4 local variable
 		
+		movl	$MAX,%eax
+
+		pushl	%eax
 		pushl	$msg_main_input_row_col_print
 		call	printf
-		addl	$4,%esp
+		addl	$8,%esp
 
-		leal	-4(%ebp),%ebx		#iRwo
+		
 		leal	-8(%ebp),%eax		#iCol
+		leal	-4(%ebp),%ebx		#iRwo
 
 		pushl	%eax
 		pushl 	%ebx
@@ -40,49 +45,118 @@
 		call	scanf
 		addl	$12,%esp
 
-		movl	$0,-12(%ebp)	#iCounter1
-		jmp		For_Codition_Outer1
+		movl	$0,-12(%ebp)			#iCounter1
+		jmp	for_codition_outer1
 
-For_Statement_Outer1:
+for_statement_outer1:
+	
 	movl	$0,-16(%ebp)
-	jmp		For_Codition_Inner1
+	jmp	for_codition_inner1
 
-		For_Statement_Inner1:
-			movl	-12(%ebp),%eax
-			movl	-16(%ebp),%edx
+	for_statement_inner1:
+		
+		movl	-16(%ebp),%edx
+		movl	-12(%ebp),%eax
 
-			pushl	%edx		
-			pushl 	%eax		#printf
-			pushl	$msg_main_input_element_print
-			call	printf
-			addl	$12,%esp
+		pushl	%edx		
+		pushl 	%eax						#printf
+		pushl	$msg_main_input_element_print
+		call	printf
+		addl	$12,%esp
 
-			movl	-12(%ebp),%eax
-			movl	-16(%ebp),%edx
-			leal	-10016(%ebp,%eax,4),%ebx		#scanf
+		xorl	%eax,%eax
+		xorl	%ecx,%ecx
+		movl	-8(%ebp),%eax			#iCol * 4 =1D size
+		movl	$4,%ecx
+		mul	%ecx				
 
-			pushl	%ebx
-			pushl	$msg_main_input_element_scan
-			call	scanf
-			addl	$8,%esp
+		xorl	%ecx,%ecx
+		movl	-12(%ebp),%ecx			#1D size * index 1D
+		mul	%ecx
+
+		leal	-10016(%ebp),%ebx    
+		addl 	%ebx,%eax			#base address + 1D location
+
+		movl	-16(%ebp),%edx			#icounter2 
+		leal 	(%eax,%edx,4),%ebx		#base address + 1D ,iCounter 2 ,element size  &arr[iCnt1][iCnt2]
 
 
-			movl	$1,-16(%ebp)	#iCounter2 ++
+		pushl	%ebx
+		pushl	$msg_main_input_element_scan
+		call	scanf
+		addl	$8,%esp
 
-		For_Codition_Inner1:
-			movl	-8(%ebp),%eax
-			movl	-16(%ebp),%edx
-			cmpl	%edx,%eax
-			jl		For_Statement_Inner1
+		addl	$1,-16(%ebp)			#iCounter2 ++
 
-	movl	$1,-12(%ebp)	#iCounter1 ++
+	for_codition_inner1:
+		movl	-16(%ebp),%eax			#iCounter2
+		movl	-8(%ebp),%edx			#iCol
+		cmpl	%edx,%eax
+		jl	for_statement_inner1
 
-For_Codition_Outer1:		
-	movl	-4(%ebp),%eax		#irow
-	movl	-12(%ebp),%edx		#iCounter1
+	addl	$1,-12(%ebp)				#iCounter1 ++
+
+for_codition_outer1:	
+	
+	movl	-12(%ebp),%eax				#iCounter
+	movl	-4(%ebp),%edx				#irow
 	cmpl	%edx,%eax
-	jl		For_Statement_Outer1
+	jl	for_statement_outer1		
+	
+	pushl	$msg_main_your_element
+	call	printf
+	addl	$4,%esp
 
+	movl	$0,-12(%ebp)				#iCounter1
+	jmp	for_codition_outer2
+
+for_statement_outer2:
+	movl	$0,-16(%ebp)			 	#iCounter2
+	jmp	for_codition_inner2
+
+	for_statement_inner2:
+		
+		xorl	%eax,%eax
+		xorl	%ecx,%ecx
+		movl	-8(%ebp),%eax  			#iCol * element size =1D Size
+		movl	$4,%ecx
+		mul		%ecx
+
+		xorl	%ecx,%ecx
+		movl	-12(%ebp),%ecx			#1D size(%eax)madhe size ali * 1D index
+		mul	%ecx
+
+		leal	-10016(%ebp),%ebx 
+		addl	%ebx,%eax			#base address + 1D riched location yanchi addition %eax madhe ahe
+
+		movl	-16(%ebp),%edx			#iCounter 2
+		movl	(%eax,%edx,4),%ecx		#arr[iCounter1][iCounter2]
+
+		movl	-16(%ebp),%eax
+		movl	-12(%ebp),%edx
+		pushl	%ecx
+		pushl	%eax
+		pushl 	%edx
+		pushl	$msg_main_output_element_display
+		call	printf
+		addl	$16,%esp
+			
+
+		addl	$1,-16(%ebp)
+
+	for_codition_inner2:
+		movl	-16(%ebp),%eax			#iCounter2
+		movl	-8(%ebp),%edx			#iCol
+		cmpl	%edx,%eax
+		jl	for_statement_inner2
+
+	addl	$1,-12(%ebp)	
+
+for_codition_outer2:
+	movl	-12(%ebp),%eax				#iCounter 1
+	movl	-4(%ebp),%edx				#irow
+	cmpl	%edx,%eax
+	jl	for_statement_outer2	
 	
 	pushl	$0
 	call 	exit
