@@ -80,3 +80,8 @@ local object
 10)  .quad  8(bytes)
 11)  .octa  16(bytes)
 12)  .zero 3 pading time use 
+13.inc increment register or memory
+14.dec decrement 
+15.movs  src string to destination string address move karto
+16.lods  contain load karch 
+17.stos src edi madhe copy karto 
