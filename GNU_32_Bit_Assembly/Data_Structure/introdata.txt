@@ -1,0 +1,21 @@
+&pFirst = insert , delete , 
+8(%ebp) =  &pFirst  = %ebx
+(%ebx) , %ebx
+(%ebx) = pPrev
+4(%ebx )= Data
+8(%ebx) = Pnext
+8(%ebx),%eax
+movl 	8(%eax)
+
+movl	8(%ebp) , %eax
+movl	(%eax) , %eax	# *ppHead
+movl	(%eax) , %eax	#(*ppHead)->pPrev
+movl	$0 , 8(%eax)	#(*ppHead)->pPrev->pNext = NULL
+movl	$0 , (%eax) 	#(*ppHead)->pPrev->pPrev = NULL
+
+
+movl	12(%ebp) , %eax
+movl	(%eax) , %eax
+movl	8(%eax) , %eax
+movl	$0 , 8(%eax)	#(*ppTail)->pNext->pNext = NULL
+
