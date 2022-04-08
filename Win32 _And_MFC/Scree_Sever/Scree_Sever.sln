@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Scree_Sever", "Scree_Sever\Scree_Sever.vcproj", "{7F8234FB-2058-4803-9802-11E1F8E1CEE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F8234FB-2058-4803-9802-11E1F8E1CEE0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F8234FB-2058-4803-9802-11E1F8E1CEE0}.Debug|Win32.Build.0 = Debug|Win32
+		{7F8234FB-2058-4803-9802-11E1F8E1CEE0}.Release|Win32.ActiveCfg = Release|Win32
+		{7F8234FB-2058-4803-9802-11E1F8E1CEE0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
